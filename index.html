@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactive Todo List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 Aplikasi To-Do Reaktif</h1>
+            <p>Tambahkan tugas lewat popup, lalu filter berdasarkan mata kuliah, prioritas, dan tanggal</p>
+        </div>
+
+        <div class="toolbar">
+            <button id="openTaskModalButton" class="primary-button" type="button">Tambah Tugas</button>
+        </div>
+
+        <div class="filter-panel">
+            <div class="filter-field">
+                <label for="subjectFilter">Filter Mata Kuliah</label>
+                <select id="subjectFilter"></select>
+            </div>
+            <div class="filter-field">
+                <label for="priorityFilter">Filter Prioritas</label>
+                <select id="priorityFilter">
+                    <option value="all">Semua Prioritas</option>
+                    <option value="low">Low</option>
+                    <option value="middle">Middle</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
+            <div class="filter-field">
+                <label for="statusFilter">Filter Status</label>
+                <select id="statusFilter">
+                    <option value="all">Semua Status</option>
+                    <option value="completed">Sudah Selesai</option>
+                    <option value="pending">Belum Selesai</option>
+                </select>
+            </div>
+            <div class="filter-field">
+                <label for="pageSizeSelect">Tampilan per Halaman</label>
+                <select id="pageSizeSelect">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="all">Semua</option>
+                </select>
+            </div>
+            <div class="filter-actions">
+                <button id="resetFiltersButton" class="secondary-button" type="button">Reset Filter</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Total tugas</span>
+                <span id="totalTasks" class="stat-value">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Tugas selesai</span>
+                <span id="completedTasks" class="stat-value">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Tugas belum selesai</span>
+                <span id="pendingTasks" class="stat-value">0</span>
+            </div>
+        </div>
+
+        <div class="results">
+            <div class="results-title">Daftar Tugas</div>
+            <div id="taskContainer" class="task-list"></div>
+            <div class="pagination-panel">
+                <div id="paginationInfo" class="pagination-info"></div>
+                <div class="pagination-controls">
+                    <button id="prevPageButton" class="secondary-button" type="button">Sebelumnya</button>
+                    <div id="pageNumbers" class="page-numbers"></div>
+                    <button id="nextPageButton" class="secondary-button" type="button">Berikutnya</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="taskModal" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+                <h2 id="modalTitle">Tambah Tugas Baru</h2>
+                <button id="closeModalButton" class="icon-button" type="button" aria-label="Tutup modal">×</button>
+            </div>
+
+            <form id="taskForm" class="modal-form">
+                <div class="form-field">
+                    <label for="taskTitleInput">Judul Tugas</label>
+                    <input id="taskTitleInput" type="text" placeholder="Contoh: Mengerjakan laporan" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="subjectSelect">Mata Kuliah</label>
+                    <select id="subjectSelect" required></select>
+                </div>
+
+                <div id="newSubjectField" class="form-field hidden">
+                    <label for="newSubjectInput">Tambah Mata Kuliah Baru</label>
+                    <input id="newSubjectInput" type="text" placeholder="Contoh: Pemrograman Web">
+                </div>
+
+                <div class="form-field">
+                    <label for="deadlineInput">Deadline</label>
+                    <input id="deadlineInput" type="date" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="taskDescriptionInput">Deskripsi Tugas</label>
+                    <textarea id="taskDescriptionInput" rows="4" placeholder="Tulis deskripsi singkat tugas..."></textarea>
+                </div>
+
+                <div class="modal-actions">
+                    <button id="cancelTaskButton" class="secondary-button" type="button">Batal</button>
+                    <button class="primary-button" type="submit">Simpan Tugas</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
