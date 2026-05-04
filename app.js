@@ -15,7 +15,7 @@ const tasks = [
     {
         id: 2,
         title: 'Menyusun laporan tugas JavaScript',
-        subject: 'Pemrograman Web',
+        subject: 'Metoda Pemrograman Modern',
         deadline: '2026-05-05',
         description: 'Membuat laporan yang menjelaskan alur kerja aplikasi dan implementasinya.',
         completed: true,
@@ -24,7 +24,7 @@ const tasks = [
     {
         id: 3,
         title: 'Merevisi tampilan aplikasi todo',
-        subject: 'Pemrograman Web',
+        subject: 'Metoda Pemrograman Modern',
         deadline: '2026-05-10',
         description: 'Memperbaiki styling, layout, dan kesesuaian tampilan dengan requirement baru.',
         completed: false,
