@@ -61,9 +61,9 @@ const tasks = [
 
 const initialSubjects = [
     'Metoda Pemrograman Modern',
-    'Pemrograman Web',
-    'Struktur Data',
-    'Pemrograman Berorientasi Objek'
+    'Praktikum Algoritma dan Pemrograman',
+    'Praktikum Rekayasa Perangkat Lunak',
+    'Komputasi Terdistribusi dan Cloud'
 ];
 
 // ============================================
