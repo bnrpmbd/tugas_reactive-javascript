@@ -29,6 +29,33 @@ const tasks = [
         description: 'Memperbaiki styling, layout, dan kesesuaian tampilan dengan requirement baru.',
         completed: false,
         createdAt: '2026-05-03'
+    },
+    {
+        id: 4,
+        title: 'Ngerevisi Laporan Prak. Alprog P4 K7',
+        subject: 'Praktikum Algoritma dan Pemrograman',
+        deadline: '2026-05-04',
+        description: "Ngecek laporan Prak. Alprog Kelompok 7 Percobaan 4, pastiin semua sesuai sama hasil yang didapat di praktek.",
+        completed: true,
+        createdAt: '2026-05-01'
+    },
+    {
+        id: 5,
+        title: 'Menyelesaikan Laporan Prak. RPL P3',
+        subject: 'Praktikum Rekayasa Perangkat Lunak',
+        deadline: '2026-05-08',
+        description: "Membuat Sequence Diagram dan Class Diagram untuk laporan Prak. RPL Percobaan 3, pastiin semua sesuai sama hasil yang didapat di praktek.",
+        completed: false,
+        createdAt: '2026-05-02'
+    },
+    {
+        id: 6,
+        title: 'Menyelesaikan class Huawei KCloud',
+        subject: 'Komputasi Terdistribusi dan Cloud',
+        deadline: '2026-05-20',
+        description: "Menyelesaikan class Huawei KCloud, pastiin semua materi udah dipahami dan tugas-tugasnya udah dikerjain.",
+        completed: false,
+        createdAt: '2026-05-05'
     }
 ];
 
